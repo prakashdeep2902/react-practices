@@ -8,6 +8,7 @@ import UsersCards from "./component/usersCards/UsersCards.jsx";
 
 import { Counter, PlayWithObject } from "./component/usestates/Usestate.jsx";
 import Event from "./component/eventPrc/event.jsx";
+import { Form, BigForm } from "./component/form/Form.jsx";
 let count = 0;
 const App = () => {
   const arr = ["prakash", "akash", "vikash", "sharma"];
@@ -116,6 +117,10 @@ const App = () => {
 
       <PlayWithObject usersDetails={users} />
       <Event />
+
+      <Form />
+
+      <BigForm />
     </>
   );
 };
