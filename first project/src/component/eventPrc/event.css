@@ -1,0 +1,38 @@
+.InputDiv{
+
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-top: 2rem;
+
+}
+
+.InputDiv input{
+
+    width: 15%;
+    height: 2rem;
+    border-radius: 5px;
+    border: 1px solid rgb(189, 237, 213);
+    margin: 1rem 0 2rem 0;
+}
+
+.InputDiv textarea{
+
+ width: 25%;
+height: 2rem;
+    border-radius: 5px;
+}
+ul li{
+    font-size: 1.5rem;
+}
+
+ul li span{
+
+
+    font-weight: bold;
+
+}

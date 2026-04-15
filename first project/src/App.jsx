@@ -7,6 +7,7 @@ import { users } from "./component/usersJson";
 import UsersCards from "./component/usersCards/UsersCards.jsx";
 
 import { Counter, PlayWithObject } from "./component/usestates/Usestate.jsx";
+import Event from "./component/eventPrc/event.jsx";
 let count = 0;
 const App = () => {
   const arr = ["prakash", "akash", "vikash", "sharma"];
@@ -114,6 +115,7 @@ const App = () => {
       </div>
 
       <PlayWithObject usersDetails={users} />
+      <Event />
     </>
   );
 };
