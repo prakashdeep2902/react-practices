@@ -1,0 +1,59 @@
+.mainDivOfuseState {
+  width: 100%;
+
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainDivOfuseState button {
+  border: none;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 800;
+  cursor: pointer;
+  background-color: rgb(96, 62, 246);
+  color: white;
+  margin-top: 1%;
+}
+
+.cardsContainer {
+  display: flex;
+  width: 90%;
+  justify-content: space-evenly;
+   flex-wrap: wrap;
+   margin-top: 2rem;
+}
+.card {
+
+    display: flex;
+    width: 15%;
+    height: 15rem;
+    border: 1px solid goldenrod;
+    margin: .5rem;
+    border-radius: 1rem;
+    padding: .5rem .1rem 0 1rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-wrap:anywhere;
+
+
+}
+
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+ 
+}
+
+ol span{
+
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;
+    
+
+}

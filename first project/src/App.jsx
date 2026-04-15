@@ -6,6 +6,7 @@ import Buttons from "./component/Buttons";
 import { users } from "./component/usersJson";
 import UsersCards from "./component/usersCards/UsersCards.jsx";
 
+import { Counter, PlayWithObject } from "./component/usestates/Usestate.jsx";
 let count = 0;
 const App = () => {
   const arr = ["prakash", "akash", "vikash", "sharma"];
@@ -53,7 +54,7 @@ const App = () => {
 
   return (
     <>
-      <div className="main">
+      {/* <div className="main">
         <h1>akas</h1>
         {console.log(isshowImage)}
         {isshowImage ? (
@@ -67,9 +68,9 @@ const App = () => {
         {arr.map((val) => {
           return <h1 style={{ color: "red" }}>{val}</h1>;
         })}
-      </div>
+      </div> */}
 
-      <div
+      {/* <div
         className="counterDiv"
         style={{ border: "2px solid red", width: "10rem" }}
       >
@@ -77,17 +78,17 @@ const App = () => {
         <button className="counterBtn" onClick={handelclick}>
           count
         </button>
-      </div>
+      </div> */}
 
-      <button
+      {/* <button
         onClick={(e) => {
           const name = e.target.textContent;
         }}
       >
         show alert
-      </button>
+      </button> */}
 
-      <NewProps names={arr} user={userDetails} />
+      {/* <NewProps names={arr} user={userDetails} />
 
       <Buttons click={handelImageClick} />
 
@@ -97,7 +98,22 @@ const App = () => {
       <h1>this is childern</h1>
 
       <userDetails />
-      <UsersCards usersDetails={users} />
+      <UsersCards usersDetails={users} /> */}
+
+      <div
+        style={{
+          width: "100%",
+          height: "auto",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          margin: "0 0 2rem 0",
+        }}
+      >
+        <Counter />
+      </div>
+
+      <PlayWithObject usersDetails={users} />
     </>
   );
 };
