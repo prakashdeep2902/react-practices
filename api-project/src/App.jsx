@@ -1,9 +1,11 @@
-import { ApiFetching } from "./component/ApiFetching";
+import { ApiFetching, CountFn, GetUsers } from "./component/ApiFetching";
 
 const App = () => {
   return (
     <div>
-      <ApiFetching />
+      {/* <ApiFetching /> */}
+      <CountFn />
+      <GetUsers />
     </div>
   );
 };
