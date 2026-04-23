@@ -3,18 +3,45 @@ import React, { useContext, useEffect, useReducer, useState } from "react";
 import "./Carts.css";
 import CartIcon from "../CartIcon/CartIcon";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../../cartSlice";
+import { productCount, removeFromCart } from "../../cartSlice";
 
 const Carts = () => {
     const [items, Setitem] = useState([]);
-    const [itemLenght, setItemLength] = useState(0)
+    const [itemLenght, setItemLength] = useState(0);
     const cartItems = useSelector((state) => state.cart.items);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     useEffect(() => {
         Setitem(cartItems);
-        setItemLength(cartItems.length)
+        setItemLength(cartItems.length);
     }, [cartItems]);
+
+    const handelCount = (e) => {
+        const value = e.target.textContent;
+
+        switch (value) {
+            case "-":
+                dispatch(productCount(value));
+                break;
+
+            case "+":
+                dispatch(productCount(value));
+                break;
+
+            default:
+                console.log("nothing");
+        }
+    };
+
+    const totalmoney = items?.reduce((sum, val) => {
+        const money = val.price.replace("$", "");
+        const qty = Number(val.quantity);
+
+        console.log(money);
+        console.log(qty);
+        sum = sum + Number(money) * qty;
+        return sum;
+    }, 0);
 
     return (
         <div className="cart-page">
@@ -34,12 +61,39 @@ const Carts = () => {
                                         <p>{item.price}</p>
 
                                         <div className="qty-box">
-                                            <button >-</button>
+                                            <button
+                                                onClick={(e) =>
+                                                    dispatch(
+                                                        productCount({
+                                                            id: item.id,
+                                                            text: e.target.textContent,
+                                                        }),
+                                                    )
+                                                }
+                                            >
+                                                -
+                                            </button>
                                             <span>{item.quantity}</span>
-                                            <button>+</button>
+                                            <button
+                                                onClick={(e) =>
+                                                    dispatch(
+                                                        productCount({
+                                                            id: item.id,
+                                                            text: e.target.textContent,
+                                                        }),
+                                                    )
+                                                }
+                                            >
+                                                +
+                                            </button>
                                         </div>
                                     </div>
-                                    <button className="remove-btn" onClick={() => dispatch(removeFromCart(item.id))}>Remove</button>
+                                    <button
+                                        className="remove-btn"
+                                        onClick={() => dispatch(removeFromCart(item.id))}
+                                    >
+                                        Remove
+                                    </button>
                                 </div>
                             );
                         })}
@@ -47,20 +101,9 @@ const Carts = () => {
 
                 <div className="cart-summary">
                     <h2>Order Summary</h2>
-
-                    <div className="summary-row">
-                        <span>Subtotal</span>
-                        <span>₹10,497</span>
-                    </div>
-
-                    <div className="summary-row">
-                        <span>Shipping</span>
-                        <span>₹99</span>
-                    </div>
-
                     <div className="summary-row total">
                         <span>Total</span>
-                        <span>₹10,596</span>
+                        <span>$ {totalmoney}</span>
                     </div>
 
                     <button className="checkout-btn">Proceed to Checkout</button>
