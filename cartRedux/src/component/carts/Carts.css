@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cart-page {
+  width: 90%;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+.HeaderAndIcon {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.cart-title {
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+.cart-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.cart-img {
+  width: 120px;
+  border-radius: 10px;
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.cart-details h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.cart-details p {
+  color: green;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.qty-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-box button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+.qty-box span {
+  font-size: 18px;
+}
+
+.remove-btn {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.cart-summary {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  height: fit-content;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.cart-summary h2 {
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 22px;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+.checkout-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  background: #007bff;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background: #0056b3;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .cart-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .remove-btn {
+    width: 100%;
+  }
+}
